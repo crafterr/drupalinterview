@@ -3,7 +3,7 @@ INTRODUCTION
 ------------
 Project template for Drupal 8 projects with a relocated document root
 
-Project give you a new profile instalation and provide a new field type, formater and widget.
+Project give you a new profile instalation called crafter and provide a new field type, formater and widget.
 Field Type contain text element name, radio element sex and text element called age.
 
  

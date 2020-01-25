@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains crafter_example.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+/**
+ * Implements hook_help().
+ */
+function crafter_example_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the crafter_example module.
+    case 'help.page.crafter_example':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Module create content type called example and custom field') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function crafter_example_theme() {
+  return [
+    'crafter_example' => [
+      'variables' => ['name' => NULL, 'sex' => NULL, 'age' => TRUE],
+    ],
+  ];
+}
+

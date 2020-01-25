@@ -1,0 +1,6 @@
+services:
+  crafter_example.twig.extension:
+    class: Drupal\crafter_example\TwigExtension\SexPropertyTwigExtension
+    arguments: []
+    tags:
+      - { name: twig.extension }

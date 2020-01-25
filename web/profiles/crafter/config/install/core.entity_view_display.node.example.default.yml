@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.example.field_example_field
+    - node.type.example
+  module:
+    - crafter_example
+    - user
+id: node.example.default
+targetEntityType: node
+bundle: example
+mode: default
+content:
+  field_example_field:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: example_field_formatter
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

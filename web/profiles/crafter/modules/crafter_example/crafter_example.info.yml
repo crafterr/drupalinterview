@@ -1,0 +1,7 @@
+name: 'Crafter Example'
+type: module
+description: 'Module create content type called example and custom field'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - node

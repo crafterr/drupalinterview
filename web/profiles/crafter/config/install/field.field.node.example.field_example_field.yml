@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_example_field
+    - node.type.example
+  module:
+    - crafter_example
+id: node.example.field_example_field
+field_name: field_example_field
+entity_type: node
+bundle: example
+label: 'Example Field'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    name: ''
+    sex: '0'
+    age: ''
+default_value_callback: ''
+settings: {  }
+field_type: example_field_item

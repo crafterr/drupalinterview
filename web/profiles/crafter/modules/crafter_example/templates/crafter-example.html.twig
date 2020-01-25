@@ -1,0 +1,13 @@
+{%
+  set class = [
+  'my-crafter-example',
+]
+%}
+<div {{ attributes.addClass(class) }}>
+  <span>{{ name }}</span>
+  <span>{{ get_sex_property(sex) }}</span>
+  {% if age %}
+  <span>{{ age }}</span>
+  {% endif %}
+</div>
+

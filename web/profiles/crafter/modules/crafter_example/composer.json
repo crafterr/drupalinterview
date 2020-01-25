@@ -1,0 +1,13 @@
+{
+    "name": "crafter_example",
+    "type": "drupal-module",
+    "description": "Module create content type called example and custom field",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/crafter_example",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/crafter_example",
+        "source": "http://cgit.drupalcode.org/crafter_example",
+    },
+}

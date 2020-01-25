@@ -1,0 +1,31 @@
+field.storage_settings.example_field_item:
+  type: mapping
+  label: 'Example Field storage settings'
+  mapping:
+    max_length:
+      type: integer
+      label: 'Max length for the name field'
+    list_type:
+      type: string
+      label: 'List type default sex field'
+
+field.widget.settings.example_field_widget:
+  type: mapping
+  label: 'Default example field widget settings'
+  mapping:
+    size:
+      type: integer
+      label: 'Number size'
+    name_placeholder:
+      type: string
+      label: 'Placeholder for name'
+    sex_placeholder:
+      type: string
+      label: 'Placeholder for sex'
+    age_placeholder:
+      type: string
+      label: 'Placeholder for age\'
+
+field.formatter.settings.example_field_formatter:
+  type: mapping
+  label: 'Default license plate formatter settings'

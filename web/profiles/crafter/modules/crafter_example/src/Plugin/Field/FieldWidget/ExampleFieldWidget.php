@@ -6,6 +6,7 @@ use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
+
 /**
  * Plugin implementation of the 'example_field_widget' widget.
  *
@@ -25,11 +26,11 @@ class ExampleFieldWidget extends WidgetBase {
    */
   public static function defaultSettings() {
     return [
-      'size' => 60,
-      'name_placeholder' => new TranslatableMarkup('Name'),
-      'sex_placeholder' => new TranslatableMarkup('Sex'),
-      'age_placeholder' => new TranslatableMarkup('Age'),
-    ] + parent::defaultSettings();
+        'size' => 60,
+        'name_placeholder' => new TranslatableMarkup('Name'),
+        'sex_placeholder' => new TranslatableMarkup('Sex'),
+        'age_placeholder' => new TranslatableMarkup('Age'),
+      ] + parent::defaultSettings();
   }
 
   /**
@@ -94,13 +95,13 @@ class ExampleFieldWidget extends WidgetBase {
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
 
-    $element['name'] =  [
+    $element['name'] = [
       '#type' => 'textfield',
       '#title' => $this->getSetting('name_placeholder'),
       '#default_value' => isset($items[$delta]->name) ? $items[$delta]->name : NULL,
       '#size' => $this->getSetting('size'),
       '#maxlength' => $this->getFieldSetting('max_length'),
-      '#required' => TRUE
+      '#required' => TRUE,
     ];
 
     $element['sex'] = [
@@ -111,7 +112,7 @@ class ExampleFieldWidget extends WidgetBase {
         '2' => $this->t('Child'),
       ],
       '#default_value' => isset($items[$delta]->sex) ?
-         $items[$delta]->sex : 0,
+        $items[$delta]->sex : 0,
       '#empty_value' => '',
       '#placeholder' => $this->t('Sex'),
       '#title' => $this->getSetting('sex_placeholder'),
@@ -119,27 +120,27 @@ class ExampleFieldWidget extends WidgetBase {
     ];
 
     $element['age'] = [
-        '#type' => 'textfield',
-        '#default_value' => isset($items[$delta]->age) ? $items[$delta]->age : NULL,
-        '#size' => $this->getSetting('size'),
-        '#placeholder' => $this->getSetting('placeholder'),
-        '#maxlength' => $this->getFieldSetting('max_length'),
-        '#title' => $this->getSetting('age_placeholder'),
-        '#states' => [
-          'required' => array(
-            ':input[name="field_example_field[0][sex]"]' => [
-              'value' => 2
-            ],
-          ),
-          'visible' => [
-            ':input[name="field_example_field[0][sex]"]' => [
-              'value' => 2
-            ],
+      '#type' => 'textfield',
+      '#default_value' => isset($items[$delta]->age) ? $items[$delta]->age : NULL,
+      '#size' => $this->getSetting('size'),
+      '#placeholder' => $this->getSetting('placeholder'),
+      '#maxlength' => $this->getFieldSetting('max_length'),
+      '#title' => $this->getSetting('age_placeholder'),
+      '#states' => [
+        'required' => [
+          ':input[name="field_example_field[0][sex]"]' => [
+            'value' => 2,
           ],
+        ],
+        'visible' => [
+          ':input[name="field_example_field[0][sex]"]' => [
+            'value' => 2,
+          ],
+        ],
 
 
-        ]
-      ];
+      ],
+    ];
 
 
     return $element;
@@ -147,11 +148,12 @@ class ExampleFieldWidget extends WidgetBase {
 
   /**
    * Empty age value if sex value is not 0 or 1
+   *
    * @inheritDoc
    */
   public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
     foreach ($values as &$value) {
-      if ($value['sex']!=2) {
+      if ($value['sex'] != 2) {
         $value['age'] = '';
       }
     }

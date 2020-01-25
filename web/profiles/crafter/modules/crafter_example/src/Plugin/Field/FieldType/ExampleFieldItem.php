@@ -28,9 +28,9 @@ class ExampleFieldItem extends FieldItemBase {
    */
   public static function defaultStorageSettings() {
     return [
-      'max_length' => 255,
-      'list_type' => 'tiny'
-    ] + parent::defaultStorageSettings();
+        'max_length' => 255,
+        'list_type' => 'tiny',
+      ] + parent::defaultStorageSettings();
   }
 
   /**
@@ -74,7 +74,7 @@ class ExampleFieldItem extends FieldItemBase {
         ],
         'sex' => [
           'type' => 'int',
-          'size' => $field_definition->getSetting('list_type')
+          'size' => $field_definition->getSetting('list_type'),
         ],
         'age' => [
           'type' => 'varchar',

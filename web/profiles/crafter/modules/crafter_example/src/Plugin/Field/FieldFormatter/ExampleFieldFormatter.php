@@ -2,7 +2,6 @@
 
 namespace Drupal\crafter_example\Plugin\Field\FieldFormatter;
 
-use Drupal\Component\Utility\Html;
 use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
@@ -26,8 +25,8 @@ class ExampleFieldFormatter extends FormatterBase {
    */
   public static function defaultSettings() {
     return [
-      // Implement default settings.
-    ] + parent::defaultSettings();
+        // Implement default settings.
+      ] + parent::defaultSettings();
   }
 
   /**
@@ -35,8 +34,8 @@ class ExampleFieldFormatter extends FormatterBase {
    */
   public function settingsForm(array $form, FormStateInterface $form_state) {
     return [
-      // Implement settings form.
-    ] + parent::settingsForm($form, $form_state);
+        // Implement settings form.
+      ] + parent::settingsForm($form, $form_state);
   }
 
   /**
@@ -76,7 +75,7 @@ class ExampleFieldFormatter extends FormatterBase {
       '#theme' => 'crafter_example',
       '#name' => $name,
       '#sex' => $sex,
-      '#age' => $age
+      '#age' => $age,
 
     ];
   }

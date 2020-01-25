@@ -21,6 +21,8 @@ composer install
 ```
 after that you can create your virtual host create empty database and run install process
 
+Project has been released by php version 7.1
+
 MAINTAINERS
 -----------
 Current maintainers:
